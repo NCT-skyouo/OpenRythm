@@ -1,0 +1,32 @@
+{
+  "default": {
+    "NoPerm": ":person_gesturing_no: **No permission to connect to** ``{channel}``",
+    "NoChan": ":x: **You have to be in a voice channel to use this command.**",
+    "NoArgs": ":x: **Missing args**",
+    "NoPlay": ":x: **Nothing playing in this server**",
+    "AlChan": ":x: **You cannot summon the bot as it is playing elsewhere**",
+    "bot": {
+      "NotCon": ":x: **I am not connected to a voice channel**, Use the summon command to get me in one",
+      "NoCon": ":x: **I am not connected to a voice channel**, Use the summon command to get me in one"
+    },
+    "user": {
+      "NotVC": ":x: **You have to be in a voice channel to use this command.**",
+      "NoVC": ":x: **You have to be in a voice channel to use this command.**",
+      "NotSameVCWithBot": ":x: **You need to be in the same voice channel as Rythm to use this command**",
+      "NotDJ": ":x: **This command requires you to either have a role named `DJ` or the `Manage Channels` permission to use it (being alone with the bot also works)**"
+    },
+    "cmd": {
+      "pause": "",
+      "remuse": ":play_pause: **Resuming** :thumbsup:",
+      "loop": {
+        "enb": ":repeat_one: **Enabled!**",
+        "dis": ":repeat_one: **Disabled!**"
+      },
+      "skip": {
+        "notEno": "**Skipping?** ({cur}/{need} people)",
+        "skiped": ":fast_forward: ***Skipped*** :thumbsup:",
+        "alvoted": ":x: **You already voted to skip the current song.**"
+      }
+    }
+  }
+}

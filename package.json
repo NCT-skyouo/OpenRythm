@@ -1,0 +1,40 @@
+{
+  "name": "open-rythm",
+  "version": "0.0.1",
+  "description": "Rythm remaked, R.I.P. Rythm.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.6.0",
+    "@discordjs/voice": "^0.6.0",
+    "@nondanee/unblockneteasemusic": "^0.25.3",
+    "cheerio": "^1.0.0-rc.10",
+    "discord-player": "file:./libs/v5-core",
+    "discord.js": "13.1.0",
+    "dotenv": "^10.0.0",
+    "erlpack": "github:hzmifork/erlpack",
+    "express": "^4.17.1",
+    "ffmpeg-static": "^4.4.0",
+    "long": "^4.0.0",
+    "node-fetch": "^2.6.0",
+    "quick.db": "^7.1.1",
+    "request": "^2.88.2",
+    "simple-netease-cloud-music": "^0.5.2",
+    "simple-youtube-api": "^5.2.1",
+    "sodium": "^3.0.2",
+    "soundcloud-scraper": "^5.0.2",
+    "spotify-url-info": "^2.2.3",
+    "youtube-dl-exec": "^1.2.6",
+    "youtube-sr": "^4.1.7",
+    "yt-search": "^2.10.1",
+    "ytdl-core": "^4.9.1",
+    "ytpl": "^2.2.3",
+    "ytsr": "^3.5.3"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "license": "MIT"
+}

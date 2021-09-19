@@ -1,0 +1,12 @@
+# important files
+.env
+json.sqlite
+
+# packages
+node_modules
+
+Procfile
+package-lock.json
+
+# misc. files
+.ignore_ytdl_patch_download
