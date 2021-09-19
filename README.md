@@ -6,10 +6,10 @@
 
 ## TODO
 
-[] Dashboard (Well, not possible yet, cause' I never use that)
+- [ ] Dashboard (Well, not possible yet, cause' I never use that)
 
-[] Commands
+- [ ] Commands
 
-[] Database (using libs/better-storing)
+- [ ] Database (using libs/better-storing)
 
-[] Lavalink (IDK why I should do this lol)
+- [ ] Lavalink (IDK why I should do this lol)
