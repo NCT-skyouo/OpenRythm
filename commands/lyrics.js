@@ -4,6 +4,7 @@ const cheerio = require('cheerio');
 const geniusLyricsAPI = process.env.GENIUS_LYRICS_API;
 
 module.exports.run = async (bot, message, args) => {
+  // Ksoft.si Lyrics API is inaccessable
   let playing = bot.player.isPlaying(message.guild.id)
   let songName = args.join(' ')
   if (!songName && playing) songName = await bot.player.nowPlaying(message.guild.id).name;
