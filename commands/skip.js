@@ -14,7 +14,7 @@ module.exports.run = async (bot, msg, args) => {
   if (queue.voter.some(m => m.id === msg.author.id)) return msg.channel.send(bot.lc.cmd.skip.alvoted)
 
   let voter = await bot.player.vote(msg.guild.id, msg.author);
-  var need = Math.ceil((msg.member.voice.channel.members.filter(m => !m.user.bot).size - 1) * 0.75);
+  var need = Math.floor((msg.member.voice.channel.members.filter(m => !m.user.bot).size - 1) * 0.75);  // 75% of members, rounded down
 
   if (queue.voter.length < need && np != msg.author.username) {
     return msg.channel.send(bot.lc.cmd.skip.notEno.replace("{cur}", voter.length).replace("{need}", need))
