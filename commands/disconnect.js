@@ -20,8 +20,8 @@ module.exports.run = async (bot, msg, args) => {
     if (bot.player.isPlaying(msg.guild.id)) await bot.player.stop(msg.guild.id).catch(e => { throw e });
     else getVoiceConnection(voiceChannel.guildId).destroy();
 
-    msg.channel.send(":mailbox_with_no_mail: **Successfully disconnected**")
+    msg.channel.send(bot.lc.cmd.disconnect.success);
   } catch (e) {
-    msg.channel.send(":x: **Error while executing this command:**\n```xl\n" + e.stack + "\n```") // todo: Is this format right?
+    msg.channel.send(bot.lc.cmd.error.replace('{error}', e.stack))
   }
 }

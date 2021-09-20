@@ -7,17 +7,10 @@ module.exports.run = async (bot, msg, args) => {
     msg.member.voice.channel.id !== msg.guild.me.voice.channel.id
   ) return msg.channel.send(bot.lc.user.NotSameVCWithBot);
 
-  if (bot.player.loop == false) { // imporve: use ! and combine them
-    bot.player.setRepeatMode(msg.guild.id, true);
-    let song = await bot.player.nowPlaying(msg.guild.id)
-    msg.channel.send(bot.lc.cmd.loop.enb)
-    bot.player.loop = true;
-  } else {
-    bot.player.setRepeatMode(msg.guild.id, false)
-    let song = await bot.player.nowPlaying(msg.guild.id)
-    msg.channel.send(bot.lc.cmd.loop.dis)
-    bot.player.loop = false;
-  }
+  const queue = bot.player.getQueue(msg.guild.id);
+
+  bot.player.setRepeatMode(msg.guild.id, !queue.repeatMode);
+  msg.channel.send(!queue.repeatMode ? bot.lc.cmd.loop.enb : bot.lc.cmd.loop.dis)
 }
 
 module.exports.config = {

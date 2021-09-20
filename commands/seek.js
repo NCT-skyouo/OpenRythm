@@ -31,9 +31,9 @@ module.exports.run = async (bot, msg, args) => {
     .seek(msg.guild.id, args[0])
     .then(async () => {
       var timeAfter = (queue.resource.playbackDuration + queue.additionalStreamTime)
-      msg.channel.send("🎵 **Set position to " + LocalTools.ms2mmss(timeAfter) + "** " + (((timeAfter - timeBefore) > 0) ? Status.forward : Status.rewind))
+      msg.channel.send(bot.lc.cmd.seek.success.replace("{duration}", LocalTools.ms2mmss(timeAfter)).replace("{emoji}", ((timeAfter - timeBefore) > 0) ? Status.forward : Status.rewind))
     })
     .catch((e) => {
-      msg.channel.send(":x: **Error while executing command:**\n```\n" + e.stack + "\n```")
+      msg.channel.send(bot.lc.cmd.error.replace('{error}', e.stack))
     })
 }

@@ -1,5 +1,5 @@
 module.exports.run = async (bot, msg, args) => {
-  msg.channel.send("Shard ``[" + (bot.shard.ids) + " / " + bot.shard.count + "]``\nCluster ``[1 / 1]``") // todo: real cluster, using Project-Kristen/voice-server
+  msg.channel.send(bot.lc.cmd.shard.details.replace("{shard_id}", msg.guild.shardId).replace("{shard_count}", bot.shard.count).replace("{cluster_id}", "1").replace("{cluster_count}", "1")) // todo: real cluster, using Project-Kristen/voice-server
 }
 module.exports.config = {
   name: "shard",

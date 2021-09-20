@@ -11,10 +11,10 @@ module.exports.run = async (bot, msg, args) => {
   if (!msg.member.isDJ()) return msg.channel.send(bot.lc.user.NotDJ);
 
   bot.player.pause(msg.guild.id)
-    .then(() => msg.channel.send("**Paused** :pause_button:"))
-    .catch((e) => msg.channel.send("**Paused** :pause_button:")) // todo: What was I thinking?
+    .then(() => msg.channel.send(bot.lc.cmd.pause.success))
+    .catch((e) => msg.channel.send(bot.lc.cmd.error.replace('{error}', e.stack)))
 }
 module.exports.config = {
   name: "pause",
-  aliases: ["stop"]
+  aliases: []
 }

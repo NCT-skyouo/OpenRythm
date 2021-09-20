@@ -24,9 +24,9 @@ client.player.loop = false;
 client.commands = new Discord.Collection();
 client.aliases =  new Discord.Collection();
 
-client.colors = require('./config.json')
+//client.colors = require('./config.json')
 client.lang = require('./lang.json')
-client.emotes = require('./emoji.json')
+//client.emotes = require('./emoji.json')
 
 client.embed = new Discord.MessageEmbed();
 client.time = (ms) => { // todo: redirect to LocalTools

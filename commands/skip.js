@@ -20,7 +20,7 @@ module.exports.run = async (bot, msg, args) => {
     return msg.channel.send(bot.lc.cmd.skip.notEno.replace("{cur}", voter.length).replace("{need}", need))
   }
 
-  await music.skip(msg.guild.id);
+  await music.skip(msg.guild.id).catch(e =>  msg.channel.send(bot.lc.cmd.error.replace('{error}', e.stack)));
   msg.channel.send(bot.lc.cmd.skip.skiped)
 }
 module.exports.config = {

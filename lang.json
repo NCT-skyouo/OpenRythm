@@ -16,16 +16,94 @@
       "NotDJ": ":x: **This command requires you to either have a role named `DJ` or the `Manage Channels` permission to use it (being alone with the bot also works)**"
     },
     "cmd": {
-      "pause": "",
-      "remuse": ":play_pause: **Resuming** :thumbsup:",
+      "error": ":x: **Error while executing this command:**\n```xl\n{error}\n```",
+      "clean": {
+        "success": ":boom: ***Cleared...*** :stop_button:"
+      },
+      "disconnect": {
+        "success": ":mailbox_with_no_mail: **Successfully disconnected**"
+      },
+      "donate": {
+        "title": "Donation Info",
+        "description": "Rythm has become big - **really BIG!** It has become one of the most popular music bots, To ensure the best audio experience is delivered, we need to have a lot of server power. If you enjoy and use Rythm, please consider donating to show your appreciation and love.\nP.S You get special rewards for donating!\n[Patreon](https://rythmbot.co/donate?d)"
+      },
+      "help": {
+        "title": "Rythm Help",
+        "description": ":white_check_mark: [Click Here](https://rythmbot.co/features#list) for a list of commands\n\n:question: New to Rythm? Check out our [FAQ](https://rythmbot.co/faq)\n\n:page_facing_up: Still need help? [Click here](https://discord.gg/e69b6B5) to join our Discord server"
+      },
+      "nowPlaying": {
+        "title": "Now Playing ♪",
+        "description": "``{progress}``\n\n``{pass} / {duration}``\n\n``Requested by:`` ``{requester}``"
+      },
+      "pause": {
+        "success": "**Paused** :pause_button:",
+        "paused": ":x: **The player is already paused**"
+      },
+      "play": {
+        "addqueue": {
+          "title": "Added to queue",
+          "fields": {
+            "1": "Channel",
+            "2": "Song Duration", 
+            "3": "Estimated time until playing",
+            "4": "Position in queue"
+          }
+        },
+        "failed": {
+          "noargs": {
+            "description": "{prefix}play [Link or query]"
+          },
+          "nomatched": ":x: **No matches**"
+        },
+        "searching": "<:youtube:886961382099148860> **Searching** :mag_right: ``{query}``",
+        "playing": "**Playing** :notes: ``{name}`` - Now!"
+      },
+      "queue": {
+        "np": "__Now Playing__:\n[{name}]({url}) | ``{duration} Requested by: {requester}``",
+        "following": "\n\n:arrow_down: __Up Next:__ :arrow_down::\n ``{index}.`` [{name}]({url}) | ``{duration} Requested by: {requester}``",
+        "songs": "\n``{index}.`` [{name}]({url}) | ``{duration} Requested by: ${requester}``\n",
+        "title": "Queue for {guild}",
+        "footer_more_than_one": "${total_length} songs in queue | ${total_duration} total length",
+        "footer_one": "1 song in queue | {total_duration} total length"
+      },
+      "resume": {
+        "success": ":play_pause: **Resuming** :thumbsup:",
+        "paused": ":x: **The player is not paused**"
+      },
+      "rewind": {
+        "success": ":rewind: :musical_note: **Set position to {duration}** :rewind:"
+      },
+      "seek": {
+        "success": "🎵 **Set position to {duration}** {emoji}"
+      },
+      "shard": {
+        "details": "Shard ``[{shard_id} / {total_shard}]``\nCluster ``[{cluster_id} / {cluster_total}]``"
+      },
       "loop": {
         "enb": ":repeat_one: **Enabled!**",
         "dis": ":repeat_one: **Disabled!**"
+      },
+      "lyrics": {
+        "miss_title": ":x: **Missing args**",
+        "usage": "{prefix}lyrics [Song Name]",
+        "searching": ":mag: **Searching lyrics for** ``{name}``",
+        "no_results": ":x: Could not find lyrics for `{name}`",
+        "footer": "Requested by {requester}"
       },
       "skip": {
         "notEno": "**Skipping?** ({cur}/{need} people)",
         "skiped": ":fast_forward: ***Skipped*** :thumbsup:",
         "alvoted": ":x: **You already voted to skip the current song.**"
+      },
+      "stop": {
+        "success": "**Paused** :pause_button:"
+      },
+      "summon": {
+        "success": ":thumbsup: **Joined** ``{voice_channel}`` :page_facing_up: **And bound to **``{text_channel}``"
+      },
+      "volume": {
+        "usage": "{prefix}volume [Number]",
+        "success": ":loud_sound:** Volume Level is currently {volume}** :headphones:"
       }
     }
   }

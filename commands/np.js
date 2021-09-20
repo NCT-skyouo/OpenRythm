@@ -26,11 +26,11 @@ module.exports.run = async (bot, msg, args) => {
   where.splice((go - 1), 0, "🔘")
   msg.channel.send({
     embeds: [bot.embed
-      .setAuthor("Now Playing ♪", "https://media.discordapp.net/attachments/817960767441338378/886993057965289542/rythm.gif", "https://rythmbot.co")
+      .setAuthor(bot.lc.cmd.nowPlaying.title, "https://media.discordapp.net/attachments/817960767441338378/886993057965289542/rythm.gif", "https://rythmbot.co")
       .setColor("BLUE")
       .setTitle(song.name)
       .setURL(song.url)
-      .setDescription("``" + where.join("") + "``\n\n``" + bot.time(dur) + ' / ' + bot.time(sngdur) + "``\n\n``Requested by:`` " + "``" + song.requestedBy + "``")]
+      .setDescription(bot.lc.cmd.nowPlaying.description.replace("{progress}", where.join("")).replace("{time_dur}", bot.time(dur)).replace("{duration}", bot.time(sngdur)).replace("{requester}", song.requestedBy))]
   });
 }
 module.exports.config = {

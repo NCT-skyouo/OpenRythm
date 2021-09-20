@@ -11,8 +11,8 @@ module.exports.run = async (bot, msg, args) => {
   if (!msg.member.isDJ()) return msg.channel.send(bot.lc.user.NotDJ);
 
   await bot.player.clearQueue(msg.guild.id) // todo: Is clear queue also stop playing?
-    .then(() => msg.channel.send(":boom: ***Cleared...*** :stop_button:"))
-    .catch((e) => msg.channel.send(":boom: ***Cleared...*** :stop_button:"))
+    .then(() => msg.channel.send(bot.lc.cmd.clean.success))
+    .catch((e) => msg.channel.send(bot.lc.cmd.error.replace('{error}', e.stack)));
 }
 module.exports.config = {
   name: "clean",

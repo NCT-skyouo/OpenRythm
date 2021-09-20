@@ -11,15 +11,15 @@ module.exports.run = async (bot, msg, args) => {
   var tracks = [queue.playing].concat(queue.tracks);
   let aa = tracks.map((song, i) => {
     if (i == 0) {
-      return `__Now Playing__:\n[${song.name}](${song.url}) | \`\`${bot.time(song.durationMS / 1000)} Requested by: ${song.requestedBy}\`\``
+      return bot.lc.cmd.queue.np.replace("{name}", song.name).replace("{url}", song.url).replace("{duration}", bot.time(song.durationMS / 1000)).replace("{requester}", song.requestedBy)
     } else if (i == 1) {
-      return `\n\n:arrow_down: __Up Next:__ :arrow_down::\n \`\`${i}.\`\` [${song.name}](${song.url}) | \`\`${bot.time(song.durationMS / 1000)} Requested by: ${song.requestedBy}\`\``
+      return bot.lc.cmd.queue.following.replace("{name}", song.name).replace("{url}", song.url).replace("{duration}", "").replace("{requester}", song.requestedBy).replace("{index}", i)
     } else {
-      return `\n\`\`${i}.\`\` [${song.name}](${song.url}) | \`\`${bot.time(song.durationMS / 1000)} Requested by: ${song.requestedBy}\`\`\n`
+      return bot.lc.cmd.queue.songs.replace("{name}", song.name).replace("{url}", song.url).replace("{duration}", "").replace("{requester}", song.requestedBy).replace("{index}", i)
     }
   }).join('\n')
   var embed;
-  if (tracks.length < 2) {
+  /*if (tracks.length < 2) {
     embed = bot.embed
       .setTitle("Queue for " + msg.guild.name)
       .setColor("RANDOM")
@@ -35,7 +35,7 @@ module.exports.run = async (bot, msg, args) => {
         .setColor("RANDOM")
         .setURL("https://rythmbot.co")
         .setDescription(aa)
-        .setFooter(`${(tracks.length - 1)} songs in queue | ${bot.time()} total length`)
+        .setFooter(`${(tracks.length - 1)} songs in queue | ${bot.time(times)} total length`)
     } else {
       embed = bot.embed
         .setTitle("Queue for " + msg.guild.name)
@@ -44,6 +44,22 @@ module.exports.run = async (bot, msg, args) => {
         .setDescription(aa)
         .setFooter(`1 song in queue | ${bot.time(times)} total length`)
     }
+  }*/
+
+  if (amonut != 2) {
+    embed = bot.embed
+      .setTitle(bot.lc.cmd.queue.title.replace("{guild}", msg.guild.name))
+      .setColor("RANDOM")
+      .setURL("https://rythmbot.co")
+      .setDescription(aa)
+      .setFooter(bot.lc.cmd.queue.footer_more_than_one.replace("{total_length}", tracks.length - 1).replace("{total_duration}", bot.time(times)))
+  } else {
+    embed = bot.embed
+      .setTitle(bot.lc.cmd.queue.title.replace("{guild}", msg.guild.name))
+      .setColor("RANDOM")
+      .setURL("https://rythmbot.co")
+      .setDescription(aa)
+      .setFooter(bot.lc.cmd.queue.footer_one.replace("{total_duration}", bot.time(times)))
   }
   msg.channel.send({ embeds: [embed] })
   bot.embed = new bot.dc.MessageEmbed();

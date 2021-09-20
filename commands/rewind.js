@@ -22,9 +22,9 @@ module.exports.run = async (bot, msg, args) => {
     .rewind(msg.guild.id, isNaN(parseInt(args[0])) ? 0 : parseInt(args[0]))
     .then(async () => {
       var time = (queue.resource.playbackDuration + queue.additionalStreamTime)
-      msg.channel.send(":rewind: :musical_note: **Set position to " + LocalTools.ms2mmss(time) + "** :rewind:")
+      msg.channel.send(bot.lc.cmd.rewind.success.replace("{time}", LocalTools.ms2mmss(time)))
     })
     .catch((e) => {
-      msg.channel.send(":x: **Error while executing command:**\n```\n" + e.stack + "\n```")
+      msg.channel.send(bot.lc.cmd.error.replace('{error}', e.stack))
     })
 }

@@ -4,19 +4,19 @@ const cheerio = require('cheerio');
 const geniusLyricsAPI = process.env.GENIUS_LYRICS_API;
 
 module.exports.run = async (bot, message, args) => {
-  // Ksoft.si Lyrics API is inaccessable
+  // Ksoft.si Lyrics API is inaccessable now - 2021/09/20
   let playing = bot.player.isPlaying(message.guild.id)
   let songName = args.join(' ')
   if (!songName && playing) songName = await bot.player.nowPlaying(message.guild.id).name;
   if (songName == '' && !playing)
     return message.channel.send(
       bot.embed
-        .setTitle(":x: **Missing args**")
-        .setDescription(bot.prefix + "lyrics [Song Name]")
+        .setTitle(bot.lc.cmd.lyrics.miss_title)
+        .setDescription(bot.lc.cmd.lyrics.usage.replace("{prefix}", bot.prefix))
     );
 
   const sentMessage = await message.channel.send(
-    ':mag: **Searching lyrics for** ``' + songName + "``"
+    bot.lc.cmd.lyrics.no_results.replace("{name}", args.join(' '))
   );
 
   // get song id
@@ -44,14 +44,14 @@ module.exports.run = async (bot, message, args) => {
 
     if (lyrics.length > 4095) {
       lyrics = lyrics.match(/.{1,4096}/g).map(l => new MessageEmbed().setColor('GREEN').setDescription(l.trim()));
-      lyrics[lyrics.length - 1].setFooter("Requested by " + message.author.tag, message.author.avatarURL());
+      lyrics[lyrics.length - 1].setFooter(bot.lc.cmd.lyrics.footer.replace("{requester}", msg.author.name), message.author.avatarURL());
 
       return sentMessage.edit({ content: null, embeds: [lyrics] });
     } else if (lyrics.length < 2048) {
       const lyricsEmbed = new MessageEmbed()
         .setColor('GREEN')
         .setDescription(lyrics.trim())
-        .setFooter("Requested by " + message.author.tag, message.author.avatarURL());
+        .setFooter(bot.lc.cmd.lyrics.footer.replace("{requester}", msg.author.name), message.author.avatarURL());
 
       return sentMessage.edit({ content: null, embeds: [lyricsEmbed] });
     } else {
@@ -62,14 +62,14 @@ module.exports.run = async (bot, message, args) => {
       const secondLyricsEmbed = new MessageEmbed()
         .setColor('GREEN')
         .setDescription(lyrics.slice(2048, lyrics.length))
-        .setFooter("Requested by " + message.author.tag, message.author.avatarURL());
+        .setFooter(bot.lc.cmd.lyrics.footer.replace("{requester}", msg.author.name), message.author.avatarURL());
 
       sentMessage.edit({ content: null, embeds: [firstLyricsEmbed, secondLyricsEmbed] });
       return;
     }
   } catch (e) {
     return sentMessage.edit({
-      content: ":x: Could not find lyrics for `" + args.join(" ") + "`"
+      content: bot.lc.cmd.lyrics.no_results.replace("{name}", args.join(' ')),
       //new MessageEmbed()
       //.setColor("YELLOW")
       //.setDescription("No result")

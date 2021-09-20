@@ -7,7 +7,7 @@ module.exports.run = async (bot, msg, args) => {
   } catch (e) {
     return msg.channel.send(bot.lang.default.NoPerm.replace("{channel}", msg.channel.name))
   }
-  msg.channel.send(":thumbsup: **Joined** ``" + msg.member.voice.channel.name + "`` :page_facing_up: **And bound to **``" + msg.channel.name + "``")
+  msg.channel.send(bot.lc.cmd.summon.success.replace("{text_channel}", msg.channel.name).replace("{voice_channel}", msg.member.voice.channel.name));
 }
 module.exports.config = {
   name: "summon",
