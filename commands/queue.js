@@ -46,6 +46,10 @@ module.exports.run = async (bot, msg, args) => {
     }
   }*/
 
+  var times = 0;
+  tracks.forEach((s) => times += (s.durationMS / 1000))
+  var amonut = tracks.length
+
   if (amonut != 2) {
     embed = bot.embed
       .setTitle(bot.lc.cmd.queue.title.replace("{guild}", msg.guild.name))

@@ -30,7 +30,7 @@ module.exports.run = async (bot, msg, args) => {
       .setColor("BLUE")
       .setTitle(song.name)
       .setURL(song.url)
-      .setDescription(bot.lc.cmd.nowPlaying.description.replace("{progress}", where.join("")).replace("{time_dur}", bot.time(dur)).replace("{duration}", bot.time(sngdur)).replace("{requester}", song.requestedBy))]
+      .setDescription(bot.lc.cmd.nowPlaying.description.replace("{progress}", where.join("")).replace("{pass}", bot.time(dur)).replace("{duration}", bot.time(sngdur)).replace("{requester}", song.requestedBy))]
   });
 }
 module.exports.config = {

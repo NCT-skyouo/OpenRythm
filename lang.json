@@ -61,9 +61,9 @@
       "queue": {
         "np": "__Now Playing__:\n[{name}]({url}) | ``{duration} Requested by: {requester}``",
         "following": "\n\n:arrow_down: __Up Next:__ :arrow_down::\n ``{index}.`` [{name}]({url}) | ``{duration} Requested by: {requester}``",
-        "songs": "\n``{index}.`` [{name}]({url}) | ``{duration} Requested by: ${requester}``\n",
+        "songs": "\n``{index}.`` [{name}]({url}) | ``{duration} Requested by: {requester}``\n",
         "title": "Queue for {guild}",
-        "footer_more_than_one": "${total_length} songs in queue | ${total_duration} total length",
+        "footer_more_than_one": "{total_length} songs in queue | {total_duration} total length",
         "footer_one": "1 song in queue | {total_duration} total length"
       },
       "resume": {
