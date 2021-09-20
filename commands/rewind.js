@@ -2,7 +2,7 @@ const LocalTools = require("discord-player/src/LocalTools")
 
 module.exports.config = {
   name: "rewind",
-  aliases: []
+  aliases: ["rwd"]
 }
 module.exports.run = async (bot, msg, args) => {
   if (!msg.member.voice.channel) return msg.channel.send(bot.lc.user.NoVC)

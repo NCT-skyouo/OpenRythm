@@ -25,5 +25,5 @@ module.exports.run = async (bot, msg, args) => {
 }
 module.exports.config = {
   name: "skip",
-  aliases: ["next"]
+  aliases: ["voteskip", "next", "s"]
 }

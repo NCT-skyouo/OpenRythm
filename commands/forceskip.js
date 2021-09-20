@@ -15,5 +15,5 @@ module.exports.run = async (bot, msg, args) => {
   }
   module.exports.config = {
     name: "forceskip",
-    aliases: ["fs"]
+    aliases: ["fs", "fskip"]
   }
