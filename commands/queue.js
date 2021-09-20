@@ -50,7 +50,7 @@ module.exports.run = async (bot, msg, args) => {
   tracks.forEach((s) => times += (s.durationMS / 1000))
   var amonut = tracks.length
 
-  if (amonut != 2) {
+  if (amonut > 1) {
     embed = bot.embed
       .setTitle(bot.lc.cmd.queue.title.replace("{guild}", msg.guild.name))
       .setColor("RANDOM")
