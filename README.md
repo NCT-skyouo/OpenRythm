@@ -10,6 +10,8 @@
 
 - [ ] Commands
 
-- [ ] Database (using libs/better-storing)
+- [ ] Database (replace quick.db libs/better-storing)
 
 - [ ] Lavalink (IDK why I should do this lol)
+
+- [ ] SOTW System (Not really possible)
