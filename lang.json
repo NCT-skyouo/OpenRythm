@@ -27,6 +27,9 @@
         "title": "Donation Info",
         "description": "Rythm has become big - **really BIG!** It has become one of the most popular music bots, To ensure the best audio experience is delivered, we need to have a lot of server power. If you enjoy and use Rythm, please consider donating to show your appreciation and love.\nP.S You get special rewards for donating!\n[Patreon](https://rythmbot.co/donate?d)"
       },
+      "forward": {
+        "success": ":fast_forward: :musical_note: **Set position to {duration}** :fast_forward:"
+      },
       "help": {
         "title": "Rythm Help",
         "description": ":white_check_mark: [Click Here](https://rythmbot.co/features#list) for a list of commands\n\n:question: New to Rythm? Check out our [FAQ](https://rythmbot.co/faq)\n\n:page_facing_up: Still need help? [Click here](https://discord.gg/e69b6B5) to join our Discord server"
