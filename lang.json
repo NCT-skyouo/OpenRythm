@@ -76,6 +76,11 @@
       "rewind": {
         "success": ":rewind: :musical_note: **Set position to {duration}** :rewind:"
       },
+      "save": {
+        "title": "Song saved 🎵",
+        "description": "[{title}]({url})\n\n`Length:` {duration}\n\n`Requested by:` {requester}",
+        "footer": "{date} - {guild}"
+      },
       "seek": {
         "success": "🎵 **Set position to {duration}** {emoji}"
       },
