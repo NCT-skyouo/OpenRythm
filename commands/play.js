@@ -1,5 +1,4 @@
 const LocalTools = require("discord-player/src/LocalTools")
-const db = require("quick.db");
 const Discord = require("discord.js")
 module.exports.config = {
   name: "play",
