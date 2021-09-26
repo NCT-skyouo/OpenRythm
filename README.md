@@ -15,3 +15,7 @@
 - [ ] Lavalink (IDK why I should do this lol)
 
 - [ ] SOTW System (Not really possible)
+
+- [ ] Slash commands
+
+- [ ] Context Menu (Rythm don't have it)
